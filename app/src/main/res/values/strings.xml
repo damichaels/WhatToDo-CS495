@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HelloSpring2020</string>
+    <string name="strLogin">Login</string>
+</resources>
