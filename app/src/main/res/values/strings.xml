@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">WhatToDo</string>
     <string name="strLogin">Login</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirmPW">Confirm Password</string>
+    <string name="email">Email</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="submit">Submit</string>
+    <string name="groups">Groups</string>
+    <string name="creategroup">Create New Group</string>
+    <string name="leavegroup">Leave Group</string>
+    <string name="logo">Logo</string>
 </resources>

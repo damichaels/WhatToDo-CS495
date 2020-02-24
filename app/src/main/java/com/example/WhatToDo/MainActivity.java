@@ -1,14 +1,13 @@
 package com.example.WhatToDo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.WhatToDo.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button btnLogin = (Button) findViewById(R.id.btnLogin);
+        final Button btnRegister = (Button) findViewById(R.id.registerbtn);
         final TextView usernameLogin = (TextView) findViewById(R.id.txtLogin);
         final TextView passwordLogin = (TextView) findViewById(R.id.passwordTextBox);
 
@@ -26,11 +26,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = usernameLogin.getText().toString();
                 String password = passwordLogin.getText().toString();
-                if (username.equals("jdtubbs3"))
-                    if (password.equals("password"))
+                if (username.equals("jdtubbs3")) {
+                    if (password.equals("password")) {
                         Toast.makeText(view.getContext(), "Open Sesame", 2).show();
+                        Intent intent1 = new Intent(getBaseContext(), GroupList.class);
+                        startActivity(intent1);
+                    }
                     else
-                        Toast.makeText(view.getContext(), "Invaid Password. Try again", 2).show();
+                    Toast.makeText(view.getContext(), "Invalid Password. Try again", 2).show();
+                }
                 else
                     Toast.makeText(view.getContext(), "Invalid username", 2).show();
 
@@ -39,5 +43,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getBaseContext(), Register.class);
+                startActivity(myIntent);
+            }
+
+        });
     }
 }
