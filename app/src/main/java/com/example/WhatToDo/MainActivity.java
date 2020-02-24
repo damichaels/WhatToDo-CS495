@@ -1,4 +1,4 @@
-package com.example.hellospring2020;
+package com.example.WhatToDo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.WhatToDo.R;
 
 public class MainActivity extends AppCompatActivity {
 

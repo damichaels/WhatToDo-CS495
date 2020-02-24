@@ -1,4 +1,4 @@
-package com.example.hellospring2020;
+package com.example.WhatToDo;
 
 import org.junit.Test;
 
