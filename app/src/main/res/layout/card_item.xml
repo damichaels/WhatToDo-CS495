@@ -19,7 +19,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_alignParentTop="true"
-            android:id="@+id/taskName"
+            android:id="@+id/taskName1"
             android:background="#ffffff"
             />
 
@@ -29,17 +29,17 @@
                 android:layout_height="wrap_content"
                 android:text="Points: "
                 android:textSize="15sp"
-                android:layout_below="@+id/taskName"
+                android:layout_below="@+id/taskName1"
                 android:layout_marginLeft="8dp"
                 android:background="#ffffff"
                 />
         <TextView
-            android:id="@+id/taskValue"
+            android:id="@+id/taskValue1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="line 2"
             android:textSize="15sp"
-            android:layout_below="@+id/taskName"
+            android:layout_below="@+id/taskName1"
             android:layout_toRightOf="@+id/points"
             android:layout_marginLeft="8dp"
             android:background="#ffffff"

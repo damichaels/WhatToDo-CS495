@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
+import android.widget.Button;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class TodayTaskList extends Activity {
+public class TodayTaskList extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private  ArrayList<taskItem> taskList = new ArrayList<>();
     private taskItemAdapter mAdapter;
@@ -19,6 +22,7 @@ public class TodayTaskList extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.task_list);
+        final Button btnMember = (Button) findViewById(R.id.btnMembers);
         taskList.add(new taskItem("Mow Lawn", "50"));
         taskList.add(new taskItem("Wash Dishes", "10"));
         taskList.add(new taskItem("Feed Cat", "20"));
@@ -30,6 +34,7 @@ public class TodayTaskList extends Activity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
         tabL= findViewById(R.id.tabLayout);
+
 
         mAdapter.setOnItemClickListener(new taskItemAdapter.OnItemClickListener() {
             @Override
@@ -70,11 +75,17 @@ public class TodayTaskList extends Activity {
 
             }
         });
-
+         btnMember.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent myIntent1 = new Intent(getBaseContext(), groupMembers.class);
+                startActivity(myIntent1);
+            }
+        });
     }
 
     public void Ganesh(){
-        Intent ganesh = new Intent(this, TaskDescription.class);
+        Intent ganesh = new Intent(getBaseContext(), YourTaskList.class);
         startActivity(ganesh);
     }
 }

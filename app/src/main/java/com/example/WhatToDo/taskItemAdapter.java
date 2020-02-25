@@ -25,10 +25,23 @@ public class taskItemAdapter extends RecyclerView.Adapter<taskItemAdapter.TaskVi
         public TextView mTaskName;
         public TextView mTaskValue;
 
-        public TaskViewHolder(@NonNull View itemView) {
+        public TaskViewHolder(@NonNull View itemView, final taskItemAdapter.OnItemClickListener listener) {
             super(itemView);
-            mTaskName= itemView.findViewById(R.id.taskName);
-            mTaskValue= itemView.findViewById(R.id.taskValue);
+            mTaskName= itemView.findViewById(R.id.taskName1);
+            mTaskValue= itemView.findViewById(R.id.taskValue1);
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    if (listener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
     public taskItemAdapter(ArrayList<taskItem> taskItems){
@@ -38,7 +51,7 @@ public class taskItemAdapter extends RecyclerView.Adapter<taskItemAdapter.TaskVi
     @Override
     public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item,parent,false);
-        TaskViewHolder evh = new TaskViewHolder(v);
+        TaskViewHolder evh = new TaskViewHolder(v,mListener);
         return evh;
     }
 

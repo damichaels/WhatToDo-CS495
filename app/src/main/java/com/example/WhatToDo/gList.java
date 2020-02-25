@@ -16,7 +16,6 @@ public class gList extends AppCompatActivity {
 
     private GroupListAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private ArrayList<String> groupNames = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +36,8 @@ public class gList extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new GroupListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Ganesh();
+                Intent today = new Intent(getBaseContext(), TodayTaskList.class);
+                startActivity(today);
             }
         });
 
@@ -50,9 +50,5 @@ public class gList extends AppCompatActivity {
         });
     }
 
-    public void Ganesh(){
-        Intent ganesh = new Intent(this, TodayTaskList.class);
-        startActivity(ganesh);
-    }
 
 }
