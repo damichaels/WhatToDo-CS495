@@ -12,6 +12,15 @@ import java.util.ArrayList;
 
 public class taskItemAdapter extends RecyclerView.Adapter<taskItemAdapter.TaskViewHolder> {
     private ArrayList<taskItem> mTaskList;
+
+    private taskItemAdapter.OnItemClickListener mListener;
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+    public void setOnItemClickListener(taskItemAdapter.OnItemClickListener listener){
+        mListener=listener;
+    }
     public static class TaskViewHolder extends RecyclerView.ViewHolder{
         public TextView mTaskName;
         public TextView mTaskValue;
