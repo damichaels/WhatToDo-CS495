@@ -67,8 +67,4 @@ public class TodayTaskList extends Activity {
         Intent list = new Intent(this, YourTaskList.class);
         startActivity(list);
     }
-    public void removeAll(int size){
-
-    }
-
 }
