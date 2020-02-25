@@ -1,4 +1,4 @@
-package com.example.hellospring2020;
+package com.example.WhatToDo;
 
 import android.os.Bundle;
 
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class GroupList extends AppCompatActivity {
+public class gList extends AppCompatActivity {
     private RecyclerView mRecyclerView;
 
     private RecyclerView.Adapter mAdapter;
@@ -33,8 +33,3 @@ public class GroupList extends AppCompatActivity {
             }
 
     }
-
-
-
-
-
