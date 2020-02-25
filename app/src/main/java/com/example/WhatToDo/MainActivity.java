@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 if (username.equals("jdtubbs3")) {
                     if (password.equals("password")) {
                         Toast.makeText(view.getContext(), "Open Sesame", 2).show();
-                        Intent intent1 = new Intent(getBaseContext(), GroupList.class);
+                        Intent intent1 = new Intent(getBaseContext(), gList.class);
                         startActivity(intent1);
                     }
                     else
