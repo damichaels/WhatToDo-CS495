@@ -10,20 +10,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <EditText
+        <TextView
             android:id="@+id/pointValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:ems="12"
-            android:inputType="textPersonName"
-            android:text="Points"
+            android:text="Points: 100"
             android:textSize="50sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             />
-    <EditText
+    <TextView
         android:id="@+id/todayTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

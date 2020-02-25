@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +24,7 @@ public class TodayTaskList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.task_list);
         final Button btnMember = (Button) findViewById(R.id.btnMembers);
+        final TextView points = findViewById(R.id.pointValue);
         taskList.add(new taskItem("Mow Lawn", "50"));
         taskList.add(new taskItem("Wash Dishes", "10"));
         taskList.add(new taskItem("Feed Cat", "20"));
@@ -53,6 +55,7 @@ public class TodayTaskList extends AppCompatActivity {
                     taskList.clear();
                     taskList.add(new taskItem("Dust", "30"));
                     taskList.add(new taskItem("Vacuum", "50"));
+                    points.setText("Points: 80");
                     mAdapter.notifyDataSetChanged();
                 }
                 else {
@@ -61,6 +64,7 @@ public class TodayTaskList extends AppCompatActivity {
                     taskList.add(new taskItem("Wash Dishes", "10"));
                     taskList.add(new taskItem("Feed Cat", "20"));
                     taskList.add(new taskItem("Fold Laundry", "20"));
+                    points.setText("Points: 100");
                     mAdapter.notifyDataSetChanged();
                 }
             }

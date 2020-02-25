@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = usernameLogin.getText().toString();
                 String password = passwordLogin.getText().toString();
-                if (username.equals("jdtubbs3")) {
+                if (username.equals("user")) {
                     if (password.equals("password")) {
                         Toast.makeText(view.getContext(), "Open Sesame", 2).show();
                         Intent intent1 = new Intent(getBaseContext(), gList.class);
