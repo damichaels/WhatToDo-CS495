@@ -1,13 +1,9 @@
-package com.example.hellospring2020;
-
+package com.example.WhatToDo;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
-import android.view.View;
 
 import java.util.ArrayList;
 
