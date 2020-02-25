@@ -12,6 +12,14 @@ import java.util.ArrayList;
 
 public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.TaskViewHolder> {
     private ArrayList<GroupName> mGroupList;
+    private OnItemClickListener mListener;
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+    public void setOnItemClickListener(GroupListAdapter.OnItemClickListener listener){
+        mListener=listener;
+    }
+
     public static class TaskViewHolder extends RecyclerView.ViewHolder{
         public TextView mGroupName;
 

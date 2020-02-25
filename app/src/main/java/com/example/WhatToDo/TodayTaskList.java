@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class TodayTaskList extends Activity {
     private RecyclerView mRecyclerView;
     private  ArrayList<taskItem> taskList = new ArrayList<>();
-    private RecyclerView.Adapter mAdapter;
+    private taskItemAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private TabLayout tabL;
     @Override
@@ -30,6 +30,15 @@ public class TodayTaskList extends Activity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
         tabL= findViewById(R.id.tabLayout);
+
+        mAdapter.setOnItemClickListener(new taskItemAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Ganesh();
+            }
+        });
+
+
         tabL.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
 
             @Override
@@ -63,8 +72,9 @@ public class TodayTaskList extends Activity {
         });
 
     }
-    public void list(View view) {
-        Intent list = new Intent(this, YourTaskList.class);
-        startActivity(list);
+
+    public void Ganesh(){
+        Intent ganesh = new Intent(this, TaskDescription.class);
+        startActivity(ganesh);
     }
 }

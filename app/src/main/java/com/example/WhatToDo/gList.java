@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class gList extends AppCompatActivity {
     private RecyclerView mRecyclerView;
 
-    private RecyclerView.Adapter mAdapter;
+    private GroupListAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<String> groupNames = new ArrayList<>();
 
@@ -34,6 +34,13 @@ public class gList extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+        mAdapter.setOnItemClickListener(new GroupListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Ganesh();
+            }
+        });
+
         btnCreateGroup.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -41,6 +48,11 @@ public class gList extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+    }
+
+    public void Ganesh(){
+        Intent ganesh = new Intent(this, TodayTaskList.class);
+        startActivity(ganesh);
     }
 
 }
