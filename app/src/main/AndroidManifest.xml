@@ -26,6 +26,48 @@
                 <category android:name="android.intent.category.INFO" />
             </intent-filter>
         </activity>
+        <activity android:name=".TodayTaskList">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".YourTaskList">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".groupMembers">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TaskDescription">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".memberInfo">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".taskSchedule">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

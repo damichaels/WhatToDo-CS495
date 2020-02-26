@@ -4,10 +4,10 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
-
+import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
-public class YourTaskList extends Activity {
+public class YourTaskList extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private taskItemAdapter2 mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
