@@ -39,10 +39,11 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username = usernameLogin.getText().toString();
+                String email = usernameLogin.getText().toString();
                 String password = passwordLogin.getText().toString();
-                mAuth.signInWithEmailAndPassword(username, password)
+                mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                            @SuppressLint("WrongConstant")
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {

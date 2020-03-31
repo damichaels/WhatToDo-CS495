@@ -57,7 +57,7 @@ public class Register extends AppCompatActivity {
 //                mDatabaseReference = mDatabase.getReference().child("name" + numUsers);
 //                mDatabaseReference.setValue(name);
                 mDatabaseReference.child("users").setValue(user);
-                mAuth.createUserWithEmailAndPassword(username, password)
+                mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>(){
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
