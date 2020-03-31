@@ -5,9 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -16,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Register extends AppCompatActivity {
     private FirebaseDatabase mDatabase;
     private DatabaseReference mDatabaseReference;
+    private FirebaseAuth mAuth;
     private int numUsers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,7 @@ public class Register extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = mDatabase.getReference();
+        mAuth = FirebaseAuth.getInstance();
         final Button btnSubmit = (Button) findViewById(R.id.submitbtn);
         final TextView usernameText = (TextView) findViewById(R.id.usernameInput);
         final TextView passwordText = (TextView) findViewById(R.id.passwordInput);
@@ -44,12 +53,28 @@ public class Register extends AppCompatActivity {
                 String lastname = lastnameText.getText().toString();
 
                 String name = firstname + " " + lastname;
-                mDatabaseReference = mDatabase.getReference().child("name" + numUsers);
-                mDatabaseReference.setValue(name);
+                User user = new User(username, password, firstname, lastname, email);
+//                mDatabaseReference = mDatabase.getReference().child("name" + numUsers);
+//                mDatabaseReference.setValue(name);
+                mDatabaseReference.child("users").setValue(user);
+                mAuth.createUserWithEmailAndPassword(username, password)
+                        .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>(){
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
+                                    startActivity(intent1);
+                                }
+                                else {
+                                    Toast.makeText(Register.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
                 numUsers++;
                 //Until database is setup, these strings would be stored in a text file.
-                Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
-                startActivity(intent1);
+ //               Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
+ //               startActivity(intent1);
             }
         });
     }
