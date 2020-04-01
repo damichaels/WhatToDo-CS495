@@ -9,14 +9,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class gList extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mDatabaseReference;
     private GroupListAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-
+    private ArrayList<GroupName> groupList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +31,27 @@ public class gList extends AppCompatActivity {
         final Button btnCreateGroup = (Button) findViewById(R.id.button_create);
         final User newUser = (User) getIntent().getSerializableExtra("user");
         //Use the uID to find the groups associated with the uID
-        ArrayList<GroupName> groupList = new ArrayList<>();
-        groupList.add(new GroupName("Smith Family Chores"));
-        groupList.add(new GroupName("Bama Roommates"));
-        groupList.add(new GroupName("The Office"));
+        final String gID = newUser.getuID() + newUser.getGroupCount();
+        mDatabaseReference = mDatabase.getReference().child("Groups").child(gID);
+        //ArrayList<GroupName> groupList = new ArrayList<>();
+        mDatabaseReference.addValueEventListener(new ValueEventListener(){
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot){
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                    Group group = new Group();
+                    group.setgName(ds.child(gID).getValue(Group.class).getgName());
+
+                    groupList.add(new GroupName(group.getgName()));
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError){
+
+            }
+        });
+        //groupList.add(new GroupName("Smith Family Chores"));
+        //groupList.add(new GroupName("Bama Roommates"));
+        //groupList.add(new GroupName("The Office"));
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
