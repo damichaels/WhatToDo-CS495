@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                                     String uid = user.getUid();
                                     String email = user.getEmail();
                                     String name = user.getDisplayName();
-                                    final User newUser = new User(uid, name, email);
+                                    User newUser = new User(uid, name, email);
                                     intent1.putExtra("user", newUser);
                                     startActivity(intent1);
                                 } else {
