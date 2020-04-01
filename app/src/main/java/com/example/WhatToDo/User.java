@@ -1,21 +1,31 @@
 package com.example.WhatToDo;
 
-public class User {
-    public String username;
-    public String password;
-    public String firstName;
-    public String lastName;
+import java.io.Serializable;
+
+public class User implements Serializable {
+    public String uID;
+    public String name;
     public String email;
 
     public User() {
 
     }
 
-    public User(String username, String password, String firstName, String lastName, String email){
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String uID, String name, String email){
+        this.uID = uID;
+        this.name = name;
         this.email = email;
+    }
+
+    public String getuID() {
+        return uID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -52,17 +53,28 @@ public class Register extends AppCompatActivity {
                 String firstname = firstnameText.getText().toString();
                 String lastname = lastnameText.getText().toString();
 
-                String name = firstname + " " + lastname;
-                User user = new User(username, password, firstname, lastname, email);
+                final String name = firstname + " " + lastname;
+//                User user = new User(username, password, firstname, lastname, email);
 //                mDatabaseReference = mDatabase.getReference().child("name" + numUsers);
 //                mDatabaseReference.setValue(name);
-                mDatabaseReference.child("users").setValue(user);
+//                mDatabaseReference.child("users").setValue(user);
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>(){
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
+
+                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                            .setDisplayName(name).build();
+                                    user.updateProfile(profileUpdates)
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+
+                                                }
+                                            });
+
                                     Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
                                     startActivity(intent1);
                                 }

@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Intent intent1 = new Intent(getBaseContext(), gList.class);
+                                    String uid = user.getUid();
+                                    String email = user.getEmail();
+                                    String name = user.getDisplayName();
+                                    final User newUser = new User(uid, name, email);
+                                    intent1.putExtra("user", newUser);
                                     startActivity(intent1);
                                 } else {
                                     Toast.makeText(MainActivity.this, "Invalid Password. Try again", 2).show();
