@@ -47,7 +47,7 @@ public class gList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(getBaseContext(), CreateGroup.class);
-                myIntent.putExtra("name", newUser);
+                myIntent.putExtra("user", newUser);
                 startActivity(myIntent);
             }
         });

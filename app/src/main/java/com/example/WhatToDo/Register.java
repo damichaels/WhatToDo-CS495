@@ -50,8 +50,8 @@ public class Register extends AppCompatActivity {
                 String password = passwordText.getText().toString();
                 String passwordConfirm = passwordConfirmText.getText().toString();
                 String email = emailText.getText().toString();
-                String firstname = firstnameText.getText().toString();
-                String lastname = lastnameText.getText().toString();
+                final String firstname = firstnameText.getText().toString();
+                final String lastname = lastnameText.getText().toString();
 
                 final String name = firstname + " " + lastname;
 //                User user = new User(username, password, firstname, lastname, email);
@@ -76,6 +76,14 @@ public class Register extends AppCompatActivity {
                                             });
 
                                     Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
+                                    String uid = user.getUid();
+                                    String email = user.getEmail();
+//                                    String name = user.getDisplayName(); //Doesn't work for some reason
+                                    String name = firstname + "" + lastname;
+                                    final User newUser = new User(uid, name, email);
+                                    mDatabaseReference = mDatabase.getReference().child("users").child(uid);
+                                    mDatabaseReference.setValue(newUser);
+//                mDatabaseReference.child("users").setValue(user);
                                     startActivity(intent1);
                                 }
                                 else {
