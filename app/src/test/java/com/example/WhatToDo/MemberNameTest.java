@@ -11,4 +11,11 @@ public class MemberNameTest {
         MemberName name = new MemberName("Bobby Joe");
         assertTrue(name.getText()=="Bobby Joe");
     }
+
+    @Test
+    public void onCreate2() {
+        MemberName name = new MemberName("Bobby Joe");
+        name.changeText("Billy Bob");
+        assertTrue(name.getText()=="Billy Bob");
+    }
 }
