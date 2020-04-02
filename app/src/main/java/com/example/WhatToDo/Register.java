@@ -16,6 +16,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -64,7 +66,7 @@ public class Register extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
-
+           //                         int count;
                                     UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                             .setDisplayName(name).build();
                                     user.updateProfile(profileUpdates)
@@ -79,11 +81,14 @@ public class Register extends AppCompatActivity {
                                     String uid = user.getUid();
                                     String email = user.getEmail();
 //                                    String name = user.getDisplayName(); //Doesn't work for some reason
-                                    String name = firstname + "" + lastname;
+                                    String name = firstname + " " + lastname;
                                     final User newUser = new User(uid, name, email);
-                                    mDatabaseReference = mDatabase.getReference().child("users").child(uid);
+                                    mDatabaseReference = mDatabase.getReference().child("users").child(newUser.getuID());
+//                                    mDatabaseReference.child("users").setValue(user);
+//                                    mDatabaseReference = mDatabase.getReference().child("users").child("count");
+//                                    mDatabaseReference.setValue(count + 1);
+  //                                  mDatabaseReference = mDatabase.getReference().child("users").child(Integer.toString(count+1));
                                     mDatabaseReference.setValue(newUser);
-//                mDatabaseReference.child("users").setValue(user);
                                     startActivity(intent1);
                                 }
                                 else {

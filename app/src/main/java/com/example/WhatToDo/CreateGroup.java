@@ -20,6 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class CreateGroup extends AppCompatActivity {
     private FirebaseDatabase mDatabase;
     private DatabaseReference mDatabaseReference;
+    public int count;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -35,14 +36,19 @@ public class CreateGroup extends AppCompatActivity {
         btnCreateGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                User newUser = (User) getIntent().getSerializableExtra("user");
-                mDatabaseReference = mDatabase.getReference().child("users").child(newUser.getuID());
-                mDatabaseReference.addValueEventListener(new ValueEventListener() {
+               // final User newUser = (User) getIntent().getSerializableExtra("user");
+//                mDatabaseReference = mDatabase.getReference().child("users").child(newUser.getuID());
+                String group = groupText.getText().toString();
+                String gID = newUser.getuID() + 0;
+                Group newGroup = new Group(group, gID);
+                mDatabaseReference = mDatabase.getReference().child("Groups").child(gID);
+                mDatabaseReference.setValue(newGroup);
+/*                mDatabaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        int count = Integer.valueOf(dataSnapshot.child("groupCount").getValue().toString());
+                        count = Integer.valueOf(dataSnapshot.child("groupCount").getValue().toString());
                         String group = groupText.getText().toString();
-                        String gID = newUser.getuID() + count;
+                        String gID = newUser.getuID() + 0;
                         Group newGroup = new Group(group, gID);
 
                         mDatabaseReference = mDatabase.getReference().child("Groups").child(gID);
@@ -60,11 +66,16 @@ public class CreateGroup extends AppCompatActivity {
 
                     }
                 });
+  */
+
+
+
             //    newUser.addGroup(newGroup);
             //    newGroup.addMember(newUser);
 //                mDatabaseReference.child(newUser.getuID()).child("Groups").setValue(newGroup);
 
                 Intent intent1 = new Intent(getBaseContext(), gList.class);
+                intent1.putExtra("user", newUser);
                 startActivity(intent1);
             }
         });
