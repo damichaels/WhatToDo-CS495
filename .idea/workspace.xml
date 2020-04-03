@@ -6,8 +6,22 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f060eb17-4e18-4473-a41e-5a6c87487331" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/GroupListAdapterTest.java" afterDir="false" />
+    <list default="true" id="f060eb17-4e18-4473-a41e-5a6c87487331" name="Default Changelist" comment="Junit Testing - Modified MemberNameTest, taskItemTest2, MemberNameAdapterTest, GroupNameTest, and GroupListAdapterTest java files to be structured with the &quot;Before&quot;, &quot;Test&quot;, and &quot;After&quot; sections.">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/GroupListAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/GroupListAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/GroupNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/GroupNameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/MemberNameAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/MemberNameAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/MemberNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/MemberNameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/taskItemTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/WhatToDo/taskItemTest2.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +71,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.GroupListAdapterTest.onCreate">
-    <configuration name="GroupListAdapterTest.onCreate" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Android JUnit.taskItemTest2">
+    <configuration name="GroupNameTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
@@ -67,9 +81,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.WhatToDo" />
-      <option name="MAIN_CLASS_NAME" value="com.example.WhatToDo.GroupListAdapterTest" />
-      <option name="METHOD_NAME" value="onCreate" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.example.WhatToDo.GroupNameTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
@@ -109,24 +122,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberNameAdapterTest.onCreate" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.WhatToDo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.WhatToDo" />
-      <option name="MAIN_CLASS_NAME" value="com.example.WhatToDo.MemberNameAdapterTest" />
-      <option name="METHOD_NAME" value="onCreate" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MemberNameTest.onCreate2" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MemberNameTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
@@ -136,14 +132,29 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.WhatToDo" />
       <option name="MAIN_CLASS_NAME" value="com.example.WhatToDo.MemberNameTest" />
-      <option name="METHOD_NAME" value="onCreate2" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="taskItemTest2" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.WhatToDo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.WhatToDo" />
+      <option name="MAIN_CLASS_NAME" value="com.example.WhatToDo.taskItemTest2" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -203,11 +214,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Android JUnit.GroupListAdapterTest.onCreate" />
-        <item itemvalue="Android JUnit.GroupNameTest.onCreate2" />
-        <item itemvalue="Android JUnit.MemberNameTest.onCreate2" />
+        <item itemvalue="Android JUnit.taskItemTest2" />
+        <item itemvalue="Android JUnit.GroupNameTest" />
         <item itemvalue="Android JUnit.GroupNameTest.onCreate" />
-        <item itemvalue="Android JUnit.MemberNameAdapterTest.onCreate" />
+        <item itemvalue="Android JUnit.GroupNameTest.onCreate2" />
+        <item itemvalue="Android JUnit.MemberNameTest" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585851482616</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Junit Testing - GroupListAdapter.java">
+      <created>1585852023808</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585852023808</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,6 +326,8 @@
     <MESSAGE value="Junit Testing - taskItemTest2.java" />
     <MESSAGE value="Junit Testing - MemberNameAdapterTest.java" />
     <MESSAGE value="Junit Testing - GroupNameTest.java &amp; edited MemberNameTest.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Junit Testing - GroupNameTest.java &amp; edited MemberNameTest.java" />
+    <MESSAGE value="Junit Testing - GroupListAdapter.java" />
+    <MESSAGE value="Junit Testing - Modified MemberNameTest, taskItemTest2, MemberNameAdapterTest, GroupNameTest, and GroupListAdapterTest java files to be structured with the &quot;Before&quot;, &quot;Test&quot;, and &quot;After&quot; sections." />
+    <option name="LAST_COMMIT_MESSAGE" value="Junit Testing - Modified MemberNameTest, taskItemTest2, MemberNameAdapterTest, GroupNameTest, and GroupListAdapterTest java files to be structured with the &quot;Before&quot;, &quot;Test&quot;, and &quot;After&quot; sections." />
   </component>
 </project>
