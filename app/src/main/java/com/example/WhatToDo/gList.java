@@ -34,10 +34,9 @@ public class gList extends AppCompatActivity {
         final User newUser = (User) getIntent().getSerializableExtra("user");
         //Use the uID to find the groups associated with the uID
         final String gID = newUser.getuID() + newUser.getGroupCount();
-        mDatabaseReference = mDatabase.getReference().child("Groups")
-        ;
+  //      mDatabaseReference = mDatabase.getReference().child("Groups");
         //ArrayList<GroupName> groupList = new ArrayList<>();
-        mDatabaseReference.addValueEventListener(new ValueEventListener(){
+   /*     mDatabaseReference.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 //                for (DataSnapshot ds : dataSnapshot.getChildren()) {
@@ -52,6 +51,8 @@ public class gList extends AppCompatActivity {
 
             }
         });
+
+    */
         groupList.add(new GroupName("Smith Family Chores"));
         groupList.add(new GroupName("Bama Roommates"));
         groupList.add(new GroupName("The Office"));

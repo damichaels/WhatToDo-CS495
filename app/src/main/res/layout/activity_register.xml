@@ -15,16 +15,18 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="493dp"
-        android:text="@string/username"
+        android:text=""
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/passwordLabel"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="264dp"
         android:layout_marginBottom="434dp"
         android:text="@string/password"
         android:textSize="18sp" />
@@ -115,34 +117,19 @@
         android:layout_marginBottom="64dp"
         android:text="@string/submit" />
 
-    <EditText
-        android:id="@+id/usernameInput"
-        android:layout_width="215dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="91dp"
-        android:layout_marginLeft="91dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="487dp"
-        android:layout_toEndOf="@+id/usernameLabel"
-        android:layout_toRightOf="@+id/usernameLabel"
-        android:ems="10"
-        android:inputType="textPersonName" />
+/
 
     <EditText
         android:id="@+id/passwordInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="92dp"
         android:layout_marginLeft="92dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="253dp"
         android:layout_marginEnd="7dp"
         android:layout_marginRight="7dp"
         android:layout_marginBottom="434dp"

@@ -38,7 +38,7 @@ public class Register extends AppCompatActivity {
         mDatabaseReference = mDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
         final Button btnSubmit = (Button) findViewById(R.id.submitbtn);
-        final TextView usernameText = (TextView) findViewById(R.id.usernameInput);
+ //       final TextView usernameText = (TextView) findViewById(R.id.usernameInput);
         final TextView passwordText = (TextView) findViewById(R.id.passwordInput);
         final TextView passwordConfirmText = (TextView) findViewById(R.id.confirmPWInput);
         final TextView emailText = (TextView) findViewById(R.id.emailInput);
@@ -48,7 +48,7 @@ public class Register extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = usernameText.getText().toString();
+         //       String username = usernameText.getText().toString();
                 String password = passwordText.getText().toString();
                 String passwordConfirm = passwordConfirmText.getText().toString();
                 String email = emailText.getText().toString();
