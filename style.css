@@ -2,7 +2,7 @@ body {
     margin: 0;
     margin-top: 50px;
     font-family: sans-serif;
-    background-color: #b6ffb3;
+    background-color: #88a686;
 }
 
 header {
@@ -13,7 +13,7 @@ header {
     right: 0;
     height: 50px;
     line-height: 50px;
-    background-color: #b6ffb3;
+    background-color: #88a686;
 }
 
 header * {
@@ -35,10 +35,12 @@ section {
     align-items: center;
     text-align: center;
     padding: 100px;
+    margin: 10px 10px 10px 10px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
     background-color: #eee;
 }
 
