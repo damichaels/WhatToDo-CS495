@@ -16,7 +16,7 @@ header {
     line-height: 50px;
     background-color: #eee;
     margin-bottom:50px;
-    margin: 0px 200px 0px 400px
+    margin: 0px 400px 0px 600px
 }
 
 header * {
@@ -38,7 +38,7 @@ section {
     align-items: center;
     text-align: center;
     padding:10px;
-    margin: 100px 200px 100px 200px;
+    margin: 100px 400px 100px 400px;
     border-radius:25px;
     background-size: cover;
     background-position: center center;
