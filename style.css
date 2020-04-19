@@ -2,6 +2,7 @@ body {
     margin: 0;
     margin-top: 50px;
     font-family: sans-serif;
+    background-color: #b6ffb3;
 }
 
 header {
@@ -12,7 +13,7 @@ header {
     right: 0;
     height: 50px;
     line-height: 50px;
-    background-color: #86db81;
+    background-color: #b6ffb3;
 }
 
 header * {
