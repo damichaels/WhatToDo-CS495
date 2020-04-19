@@ -41,7 +41,7 @@ section {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
+    top:100px;
     background-color: #eee;
 }
 
