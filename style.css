@@ -14,9 +14,9 @@ header {
     border-radius: 25px;
     height: 50px;
     line-height: 50px;
-    background-color: #eee;
+    background-color: #f7f7f7;
     margin-bottom:50px;
-    margin: 0px 400px 0px 600px
+    margin: 0px 400px 0px 800px
 }
 
 header * {
@@ -44,7 +44,7 @@ section {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #eee;
+    background-color: #f7f7f7;
 }
 
 footer {
@@ -67,4 +67,5 @@ section h3 {
 header a {
     text-decoration: none;
     color: black;
+    margin-left:10px;
 }
