@@ -22,7 +22,8 @@ public class memberInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_info);
-        final TextView points = findViewById(R.id.pointValue);
+        final TextView points = (TextView) findViewById(R.id.pointValue);
+        final Button btnCreateTask = (Button) findViewById(R.id.buttonTaskCreate);
         taskList.add(new taskItem("Mow Lawn", "50"));
         taskList.add(new taskItem("Wash Dishes", "10"));
         taskList.add(new taskItem("Feed Cat", "20"));
@@ -54,6 +55,15 @@ public class memberInfo extends AppCompatActivity {
             }
 
         });*/
+        btnCreateTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getBaseContext(), CreateTask.class);
+                startActivity(myIntent);
+            }
+
+        });
+    }
     }
 
-}
+
