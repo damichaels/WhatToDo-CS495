@@ -10,6 +10,7 @@ public class Group implements Serializable {
     private String gCode;
     private ArrayList<User> memberList;
     private int memberCount;
+    private int taskCount;
 
     public Group() {
 
@@ -20,6 +21,7 @@ public class Group implements Serializable {
         gID = ID;
         memberCount = 1;
         gCode = gID.substring(gID.length() - 5);
+        taskCount = 0;
     }
     public void setgName(String name) {
         gName = name;
@@ -28,6 +30,12 @@ public class Group implements Serializable {
         return gName;
     }
 
+    public int getTaskCount() {
+        return taskCount;
+    }
+    public void setTaskCount(int i) {
+        taskCount++;
+    }
     public String getgID() {
         return gID;
     }

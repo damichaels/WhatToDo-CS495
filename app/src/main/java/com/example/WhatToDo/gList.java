@@ -48,7 +48,7 @@ public class gList extends AppCompatActivity {
                 int x, y = myUser.getGroupCount();
 
                 for (x = 1; x <= y; x++) {
-                    DocumentReference docRef1 = db.collection("users").document(newUser.getuID()).collection("groups").document(String.valueOf(x));
+                    DocumentReference docRef1 = db.collection("users").document(myUser.getuID()).collection("groups").document(String.valueOf(x));
               /*    Task<DocumentSnapshot> ds = docRef1.get();
                     DocumentSnapshot ds1 = ds.getResult();
                     Group myGroup = ds1.toObject(Group.class);
