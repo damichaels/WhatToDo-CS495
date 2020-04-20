@@ -67,8 +67,8 @@ section h3 {
 header a {
     text-decoration: none;
     color: black;
-    margin-right: 20px;
+    margin-right: 65px;
 }
-a:hover{
-  background-color: yellow;
+header a:hover{
+  color: #3939db;
 }
