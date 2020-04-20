@@ -71,3 +71,6 @@
     </application>
 
 </manifest>
+
+
+<!--android:name="android.support.multidex.MultiDexApplication" -->
