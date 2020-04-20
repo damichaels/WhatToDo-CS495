@@ -31,7 +31,17 @@
         android:layout_marginBottom="144dp"
         android:text="@string/creategroup"
         android:textSize="18sp" />
-
+    <Button
+        android:id="@+id/joingroup"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="122dp"
+        android:layout_marginRight="122dp"
+        android:layout_marginBottom="84dp"
+        android:text="Join Group" />
     <Button
         android:id="@+id/leavegroup"
         android:layout_width="wrap_content"
@@ -39,9 +49,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="123dp"
-        android:layout_marginRight="123dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginRight="122dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/leavegroup" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
