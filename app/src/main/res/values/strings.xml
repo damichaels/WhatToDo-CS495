@@ -34,4 +34,5 @@
         <item>8</item>
         <item>9</item>
     </string-array>
+    <string name="title_activity_create_task">CreateTask</string>
 </resources>

@@ -37,6 +37,7 @@ public class gList extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
         final Button btnCreateGroup = (Button) findViewById(R.id.button_create);
+        final Button btnJoinGroup = (Button) findViewById(R.id.button_join);
         final User newUser = (User) getIntent().getSerializableExtra("user");
 
         DocumentReference docRef = db.collection("users").document(newUser.getuID());
@@ -86,6 +87,14 @@ public class gList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(getBaseContext(), CreateGroup.class);
+                myIntent.putExtra("user", newUser);
+                startActivity(myIntent);
+            }
+        });
+        btnJoinGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getBaseContext(), JoinGroup.class);
                 myIntent.putExtra("user", newUser);
                 startActivity(myIntent);
             }

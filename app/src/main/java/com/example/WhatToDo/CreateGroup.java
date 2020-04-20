@@ -26,8 +26,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class CreateGroup extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-  //  private FirebaseDatabase mDatabase;
-  //  private DatabaseReference mDatabaseReference;
     public int count;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +34,10 @@ public class CreateGroup extends AppCompatActivity {
         setContentView(R.layout.create_group);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-  //      mDatabase = FirebaseDatabase.getInstance();
-   //     mDatabaseReference = mDatabase.getReference();
+
         FirebaseUser user = mAuth.getCurrentUser();
         final Button btnCreateGroup = (Button) findViewById(R.id.button);
-  //      final User newUser = (User) getIntent().getSerializableExtra("user");
-        /* assert(newUser == null); */
+
         final TextView groupText = (TextView) findViewById(R.id.editText5);
 
         btnCreateGroup.setOnClickListener(new View.OnClickListener() {
@@ -58,10 +54,10 @@ public class CreateGroup extends AppCompatActivity {
                        String gID = newUser.getuID() + (count + 1);
                        newUser.setGroupCount(count + 1);
                        Group newGroup = new Group(group, gID);
-                       db.collection("groups").document(gID).set(newGroup);
+                       db.collection("groups").document(newGroup.getgCode()).set(newGroup);
                        db.collection("users").document(newUser.getuID()).set(newUser);
                        db.collection("users").document(newUser.getuID()).collection("groups").document(String.valueOf(count + 1)).set(newGroup);
-                       db.collection("groups").document(gID).collection("members").document("1").set(newUser);
+                       db.collection("groups").document(newGroup.getgCode()).collection("members").document("1").set(newUser);
                        Intent intent1 = new Intent(getBaseContext(), gList.class);
                        intent1.putExtra("user", newUser);
                        startActivity(intent1);

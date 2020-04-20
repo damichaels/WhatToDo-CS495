@@ -43,7 +43,7 @@
         android:layout_marginBottom="84dp"
         android:text="Join Group" />
     <Button
-        android:id="@+id/leavegroup"
+        android:id="@+id/joingroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

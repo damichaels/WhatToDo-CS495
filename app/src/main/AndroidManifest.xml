@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CreateGroup"></activity>
-        <activity android:name=".gList"></activity>
+
+        <activity android:name=".JoinGroup" />
+        <activity android:name=".CreateGroup" />
+        <activity android:name=".gList" />
         <activity android:name=".GroupList" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -71,6 +73,3 @@
     </application>
 
 </manifest>
-
-
-<!--android:name="android.support.multidex.MultiDexApplication" -->
