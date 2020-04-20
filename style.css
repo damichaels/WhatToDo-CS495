@@ -67,5 +67,9 @@ section h3 {
 header a {
     text-decoration: none;
     color: black;
-    margin-left:10px;
+}
+header b {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
 }
