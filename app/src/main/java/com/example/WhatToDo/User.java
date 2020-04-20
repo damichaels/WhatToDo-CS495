@@ -41,4 +41,8 @@ public class User implements Serializable {
     public int getGroupCount() {
         return groupCount;
     }
+
+    public void setGroupCount(int i) {
+        groupCount = i;
+    }
 }

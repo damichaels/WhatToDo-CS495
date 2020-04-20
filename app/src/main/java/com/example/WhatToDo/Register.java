@@ -16,16 +16,18 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+//import com.google.firebase.database.DataSnapshot;
+//import com.google.firebase.database.DatabaseError;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 //import android.support.v7.app.AppCompatActivity;
 
 public class Register extends AppCompatActivity {
-    private FirebaseDatabase mDatabase;
-    private DatabaseReference mDatabaseReference;
+    private FirebaseFirestore db;
+  //  private FirebaseDatabase mDatabase;
+   // private DatabaseReference mDatabaseReference;
     private FirebaseAuth mAuth;
     private int numUsers;
     @Override
@@ -34,9 +36,10 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         //Have to fix these inputs
 
-        mDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = mDatabase.getReference();
+//        mDatabase = FirebaseDatabase.getInstance();
+ //       mDatabaseReference = mDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
         final Button btnSubmit = (Button) findViewById(R.id.submitbtn);
  //       final TextView usernameText = (TextView) findViewById(R.id.usernameInput);
         final TextView passwordText = (TextView) findViewById(R.id.passwordInput);
@@ -48,6 +51,8 @@ public class Register extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+    //            mDatabaseReference = mDatabase.getReference().child("Groups");
+  //              mDatabaseReference.removeValue();  //Used for LG Doomsday
          //       String username = usernameText.getText().toString();
                 String password = passwordText.getText().toString();
                 String passwordConfirm = passwordConfirmText.getText().toString();
@@ -83,12 +88,13 @@ public class Register extends AppCompatActivity {
 //                                    String name = user.getDisplayName(); //Doesn't work for some reason
                                     String name = firstname + " " + lastname;
                                     final User newUser = new User(uid, name, email);
-                                    mDatabaseReference = mDatabase.getReference().child("users").child(newUser.getuID());
+                                    db.collection("users").document(uid).set(newUser);
+ //                                   mDatabaseReference = mDatabase.getReference().child("users").child(newUser.getuID());
 //                                    mDatabaseReference.child("users").setValue(user);
 //                                    mDatabaseReference = mDatabase.getReference().child("users").child("count");
 //                                    mDatabaseReference.setValue(count + 1);
   //                                  mDatabaseReference = mDatabase.getReference().child("users").child(Integer.toString(count+1));
-                                    mDatabaseReference.setValue(newUser);
+   //                                 mDatabaseReference.setValue(newUser);
                                     startActivity(intent1);
                                 }
                                 else {

@@ -8,19 +8,25 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+/*
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+*/
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
 public class gList extends AppCompatActivity {
+    private FirebaseFirestore db;
     private RecyclerView mRecyclerView;
-    private FirebaseDatabase mDatabase;
-    private DatabaseReference mDatabaseReference;
+
     private GroupListAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     public ArrayList<GroupName> groupList = new ArrayList<>();
@@ -28,33 +34,37 @@ public class gList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.group_list);
-        mDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = mDatabase.getReference();
+
+        db = FirebaseFirestore.getInstance();
         final Button btnCreateGroup = (Button) findViewById(R.id.button_create);
         final User newUser = (User) getIntent().getSerializableExtra("user");
-        //Use the uID to find the groups associated with the uID
-        final String gID = newUser.getuID() + newUser.getGroupCount();
-  //      mDatabaseReference = mDatabase.getReference().child("Groups");
-        //ArrayList<GroupName> groupList = new ArrayList<>();
-   /*     mDatabaseReference.addValueEventListener(new ValueEventListener(){
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    Group group = new Group();
-//                    group.setgName(ds.child(gID).getValue(Group.class).getgName());
-                    group.setgName(dataSnapshot.child(gID).child("gName").getValue().toString());
-                    groupList.add(new GroupName(group.getgName()));
- //               }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
 
+        DocumentReference docRef = db.collection("users").document(newUser.getuID());
+        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                User myUser = documentSnapshot.toObject(User.class);
+                int x, y = myUser.getGroupCount();
+                for (x = 1; x <= y; x++) {
+                    DocumentReference docRef1 = db.collection("users").document(newUser.getuID()).collection("groups").document(String.valueOf(x));
+              /*    Task<DocumentSnapshot> ds = docRef1.get();
+                    DocumentSnapshot ds1 = ds.getResult();
+                    Group myGroup = ds1.toObject(Group.class);
+                    groupList.add(new GroupName(myGroup.getgName()));
+                    */
+                    docRef1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            Group myGroup = documentSnapshot.toObject(Group.class);
+                            groupList.add(new GroupName(myGroup.getgName()));
+                        }
+                    });
+                }
             }
         });
 
-    */
-        groupList.add(new GroupName("Smith Family Chores"));
-        groupList.add(new GroupName("Bama Roommates"));
+      //  groupList.add(new GroupName("Smith Family Chores"));
+      //  groupList.add(new GroupName("Bama Roommates"));
         groupList.add(new GroupName("The Office"));
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
