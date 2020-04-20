@@ -12,6 +12,7 @@
 
         <activity android:name=".JoinGroup" />
         <activity android:name=".CreateGroup" />
+        <activity android:name=".CreateTask"/>
         <activity android:name=".gList" />
         <activity android:name=".GroupList" />
         <activity android:name=".MainActivity">
