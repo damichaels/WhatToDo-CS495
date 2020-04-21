@@ -1,6 +1,7 @@
 package com.example.WhatToDo;
-
-public class Task implements serializable{
+import java.io.Serializable;
+import java.util.ArrayList;
+public class Task implements Serializable{
     private String tName;
     private String tPoints;
 
