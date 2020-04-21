@@ -69,6 +69,9 @@ header a {
     color: black;
     margin-right: 65px;
 }
+header h1{
+  
+}
 header a:hover{
   color: #3939db;
 }
