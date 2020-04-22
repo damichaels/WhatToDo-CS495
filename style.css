@@ -11,12 +11,10 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    border-radius: 25px;
     height: 50px;
     line-height: 50px;
-    background-color: #f7f7f7;
     margin-bottom:50px;
-    margin: 0px 400px 0px 1200px
+
 }
 
 header * {
@@ -25,7 +23,15 @@ header * {
 }
 
 header ul {
+    display: flex;
     padding: 0;
+    margin-left: 50px;
+     margin: 0px 400px 0px 1200px;
+     background-color: #f7f7f7;
+     border-radius: 25px;
+
+     height: 50px;
+     line-height: 50px;
 }
 
 header li {
@@ -70,7 +76,7 @@ header a {
     margin-right: 65px;
 }
 header h1{
-  
+
 }
 header a:hover{
   color: #3939db;
