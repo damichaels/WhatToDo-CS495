@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f060eb17-4e18-4473-a41e-5a6c87487331" name="Default Changelist" comment="">
+    <list default="true" id="f060eb17-4e18-4473-a41e-5a6c87487331" name="Default Changelist" comment="Added code to display the current values of the task's schedule when the user first accesses the taskSchedule screen.">
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/WhatToDo/taskSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/WhatToDo/taskSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_task_schedule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_task_schedule.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -290,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587651040026</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Made functions to interpret schedule data from the database.">
+      <created>1587657330861</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587657330861</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -330,6 +338,8 @@
     <MESSAGE value="Junit Testing - GroupListAdapter.java" />
     <MESSAGE value="Junit Testing - Modified MemberNameTest, taskItemTest2, MemberNameAdapterTest, GroupNameTest, and GroupListAdapterTest java files to be structured with the &quot;Before&quot;, &quot;Test&quot;, and &quot;After&quot; sections." />
     <MESSAGE value="Starting point for setting the schedule of a task. More pushes to come to finalize this functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting point for setting the schedule of a task. More pushes to come to finalize this functionality." />
+    <MESSAGE value="Made functions to interpret schedule data from the database." />
+    <MESSAGE value="Added code to display the current values of the task's schedule when the user first accesses the taskSchedule screen." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added code to display the current values of the task's schedule when the user first accesses the taskSchedule screen." />
   </component>
 </project>
