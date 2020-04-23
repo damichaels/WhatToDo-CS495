@@ -33,6 +33,7 @@ public class CreateTask extends AppCompatActivity {
 
         FirebaseUser user = mAuth.getCurrentUser();
         final Button btnCreateTask = (Button) findViewById(R.id.button_task);
+        final Button btnSetSchedule = (Button) findViewById(R.id.button_set_schedule);
         final TextView taskName = (TextView) findViewById(R.id.task_name);
         final TextView taskPoints = (TextView) findViewById(R.id.task_point);
 
@@ -63,6 +64,18 @@ public class CreateTask extends AppCompatActivity {
 
             }
         });
+
+
+        btnSetSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getBaseContext(), taskSchedule.class);
+                startActivity(myIntent);
+            }
+        });
+
     }
 
 }
+
+
