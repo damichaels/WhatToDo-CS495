@@ -70,3 +70,32 @@ public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.Task
         }
     }
 
+/*public class GroupListAdapter extends FirestoreRecyclerAdapter<Group, GroupListAdapter.GroupListHolder> {
+
+//public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.GroupListHolder> {
+    public GroupListAdapter(@NonNull FirestoreRecyclerOptions<Group> groups) {
+        super(groups);
+    }
+
+    @Override
+    protected void onBindViewHolder(@NonNull GroupListHolder holder, int position, @NonNull Group model) {
+        holder.textViewGroupList.setText(model.getgName());
+    }
+
+    @NonNull
+    @Override
+    public GroupListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.group_item, parent, false);
+        return new GroupListHolder(view);
+    }
+
+    class GroupListHolder extends RecyclerView.ViewHolder {
+        TextView textViewGroupList;
+
+        public GroupListHolder(@NonNull View groupView) {
+            super(groupView);
+            textViewGroupList = groupView.findViewById(R.id.groupName);
+        }
+    }
+}
+*/

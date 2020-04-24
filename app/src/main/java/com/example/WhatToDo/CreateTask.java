@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -16,8 +15,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 
 public class CreateTask extends AppCompatActivity {
@@ -50,13 +47,14 @@ public class CreateTask extends AppCompatActivity {
                         final Group myGroup = documentSnapshot.toObject(Group.class);
                         final int tCount = myGroup.getTaskCount();
                         Task myTask = new Task(tName, tPoints);
-                        myGroup.setTaskCount(tCount + 1);
                         db.collection("groups").document(myGroup.getgCode()).set(myGroup);
                         db.collection("groups").document(myGroup.getgCode()).collection("tasks").document(String.valueOf(tCount + 1)).set(myTask);
 
-                        Intent intent1 = new Intent(getBaseContext(), gList.class); //NEEDS TO CHANGE
+                        myGroup.setTaskCount(tCount + 1);
+                        Intent intent1 = new Intent(getBaseContext(), TodayTaskList.class); //NEEDS TO CHANGE
                         intent1.putExtra("user", newUser); //NEEDS TO CHANGE
                         intent1.putExtra("group", myGroup);
+                        intent1.putExtra("task", myTask);
                         startActivity(intent1); // NEEDS TO CHANGE
                     }
                 });

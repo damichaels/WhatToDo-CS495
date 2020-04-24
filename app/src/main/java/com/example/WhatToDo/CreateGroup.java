@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -60,6 +59,7 @@ public class CreateGroup extends AppCompatActivity {
                        db.collection("groups").document(newGroup.getgCode()).collection("members").document("1").set(newUser);
                        Intent intent1 = new Intent(getBaseContext(), gList.class);
                        intent1.putExtra("user", newUser);
+                       intent1.putExtra("group", newGroup);
                        startActivity(intent1);
                    }
                });

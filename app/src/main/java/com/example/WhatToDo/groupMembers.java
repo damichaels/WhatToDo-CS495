@@ -5,11 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import androidx.appcompat.app.AppCompatActivity;
 
 
 public class groupMembers extends AppCompatActivity {
@@ -22,6 +23,7 @@ public class groupMembers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_members);
         final Button btnAdd = (Button) findViewById(R.id.button_add);
+        final Group newGroup = (Group) getIntent().getSerializableExtra("group");
         ArrayList<MemberName> memberList = new ArrayList<>();
         memberList.add(new MemberName("Mike"));
         memberList.add(new MemberName("Joey"));
@@ -38,6 +40,7 @@ public class groupMembers extends AppCompatActivity {
             @Override
             public void onItemClick(int position) {
                 Intent myIntent1 = new Intent(getBaseContext(), memberInfo.class);
+                myIntent1.putExtra("group", newGroup);
                 startActivity(myIntent1);
             }
         });

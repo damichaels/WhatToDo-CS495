@@ -1,6 +1,5 @@
 package com.example.WhatToDo;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +23,7 @@ public class memberInfo extends AppCompatActivity {
         setContentView(R.layout.activity_member_info);
         final TextView points = (TextView) findViewById(R.id.pointValue);
         final Button btnCreateTask = (Button) findViewById(R.id.buttonTaskCreate);
+        final Group newGroup = (Group) getIntent().getSerializableExtra("group");
         taskList.add(new taskItem("Mow Lawn", "50"));
         taskList.add(new taskItem("Wash Dishes", "10"));
         taskList.add(new taskItem("Feed Cat", "20"));
@@ -59,6 +59,7 @@ public class memberInfo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(getBaseContext(), CreateTask.class);
+                myIntent.putExtra("group", newGroup);
                 startActivity(myIntent);
             }
 

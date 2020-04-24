@@ -1,14 +1,12 @@
 package com.example.WhatToDo;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Group implements Serializable {
     private String gName;
     private String gID;
     private String gCode;
-    private ArrayList<User> memberList;
+   // private ArrayList<User> memberList;
     private int memberCount;
     private int taskCount;
 
@@ -46,7 +44,7 @@ public class Group implements Serializable {
     public void setMemberCount(int i) {memberCount = i;}
     public int getMemberCount() {return memberCount;}
 
-    public void addMember(User myUser) {
-        memberList.add(myUser);
-    }
+   // public void addMember(User myUser) {
+  //      memberList.add(myUser);
+  //  }
 }
