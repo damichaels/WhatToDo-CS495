@@ -51,9 +51,9 @@ public class Register extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-    //            mDatabaseReference = mDatabase.getReference().child("Groups");
-  //              mDatabaseReference.removeValue();  //Used for LG Doomsday
-         //       String username = usernameText.getText().toString();
+                //            mDatabaseReference = mDatabase.getReference().child("Groups");
+                //              mDatabaseReference.removeValue();  //Used for LG Doomsday
+                //       String username = usernameText.getText().toString();
                 String password = passwordText.getText().toString();
                 String passwordConfirm = passwordConfirmText.getText().toString();
                 String email = emailText.getText().toString();
@@ -65,47 +65,53 @@ public class Register extends AppCompatActivity {
 //                mDatabaseReference = mDatabase.getReference().child("name" + numUsers);
 //                mDatabaseReference.setValue(name);
 //                mDatabaseReference.child("users").setValue(user);
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>(){
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    FirebaseUser user = mAuth.getCurrentUser();
-           //                         int count;
-                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                            .setDisplayName(name).build();
-                                    user.updateProfile(profileUpdates)
-                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
+                if (password.equals(passwordConfirm)) {
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        //                         int count;
+                                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                                .setDisplayName(name).build();
+                                        user.updateProfile(profileUpdates)
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
 
-                                                }
-                                            });
+                                                    }
+                                                });
 
-                                    Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
-                                    String uid = user.getUid();
-                                    String email = user.getEmail();
+                                        Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
+                                        String uid = user.getUid();
+                                        String email = user.getEmail();
 //                                    String name = user.getDisplayName(); //Doesn't work for some reason
-                                    String name = firstname + " " + lastname;
-                                    final User newUser = new User(uid, name, email);
-                                    db.collection("users").document(uid).set(newUser);
- //                                   mDatabaseReference = mDatabase.getReference().child("users").child(newUser.getuID());
+                                        String name = firstname + " " + lastname;
+                                        final User newUser = new User(uid, name, email);
+                                        db.collection("users").document(uid).set(newUser);
+                                        //                                   mDatabaseReference = mDatabase.getReference().child("users").child(newUser.getuID());
 //                                    mDatabaseReference.child("users").setValue(user);
 //                                    mDatabaseReference = mDatabase.getReference().child("users").child("count");
 //                                    mDatabaseReference.setValue(count + 1);
-  //                                  mDatabaseReference = mDatabase.getReference().child("users").child(Integer.toString(count+1));
-   //                                 mDatabaseReference.setValue(newUser);
-                                    startActivity(intent1);
+                                        //                                  mDatabaseReference = mDatabase.getReference().child("users").child(Integer.toString(count+1));
+                                        //                                 mDatabaseReference.setValue(newUser);
+                                        startActivity(intent1);
+                                    } else {
+                                        Toast.makeText(Register.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                                else {
-                                    Toast.makeText(Register.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-                numUsers++;
-                //Until database is setup, these strings would be stored in a text file.
- //               Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
- //               startActivity(intent1);
+                            });
+                    numUsers++;
+                    //Until database is setup, these strings would be stored in a text file.
+                    //               Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
+                    //               startActivity(intent1);
+                }
+                else {
+                    Toast.makeText(Register.this, "Passwords do not match. Try again", 2).show();
+                    passwordText.setText("");
+                    passwordConfirmText.setText("");
+                }
             }
         });
     }

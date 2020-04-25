@@ -1,9 +1,10 @@
 package com.example.WhatToDo;
 import java.io.Serializable;
-import java.util.ArrayList;
+
 public class Task implements Serializable{
     private String tName;
     private String tPoints;
+    private boolean done;
 
     public Task() {
 
@@ -12,6 +13,7 @@ public class Task implements Serializable{
     public Task(String name, String points) {
         tName = name;
         tPoints = points;
+        done = false;
     }
     public String gettName() {
         return tName;
@@ -19,5 +21,13 @@ public class Task implements Serializable{
 
     public String gettPoints() {
         return tPoints;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone (boolean a) {
+        done = a;
     }
 }

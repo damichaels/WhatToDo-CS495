@@ -2,16 +2,17 @@ package com.example.WhatToDo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class TodayTaskList extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -25,6 +26,11 @@ public class TodayTaskList extends AppCompatActivity {
         setContentView(R.layout.task_list);
         final Button btnMember = (Button) findViewById(R.id.btnMembers);
         final TextView points = findViewById(R.id.pointValue);
+        final Group newGroup = (Group) getIntent().getSerializableExtra("group");
+        final Task newTask = (Task) getIntent().getSerializableExtra("task");
+        if (newTask != null) {
+            taskList.add(new taskItem(newTask.gettName(), newTask.gettPoints()));
+        }
         taskList.add(new taskItem("Mow Lawn", "50"));
         taskList.add(new taskItem("Wash Dishes", "10"));
         taskList.add(new taskItem("Feed Cat", "20"));
@@ -83,6 +89,7 @@ public class TodayTaskList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent1 = new Intent(getBaseContext(), groupMembers.class);
+                myIntent1.putExtra("group", newGroup);
                 startActivity(myIntent1);
             }
         });
